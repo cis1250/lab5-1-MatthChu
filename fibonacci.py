@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-#!/usr/bin/env python3
 def valid (c):
     if c < 0:
         return False
-    elif c > 0:
+    elif c >= 0:
         return True
     else:
         return False
@@ -41,9 +40,6 @@ def main ():
 
 main()
 
-
-# Fibonacci Sequence Exercise with functions
-# TODO: (Read detailed instructions in the Readme file)
 
 # Fibonacci Sequence Exercise with functions
 # TODO: (Read detailed instructions in the Readme file)
