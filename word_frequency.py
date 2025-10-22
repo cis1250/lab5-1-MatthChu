@@ -24,3 +24,48 @@ def is_sentence(text):
         return False
 
     return True
+def get_sentence(s):
+    s = str(input("Enter a sentance: "))
+    return s
+
+def calculate_frequencies(sentence):
+    words = []
+    count = []
+    user_sentence = sentence.split()
+
+    for word in user_sentence:  # iterate over words, not characters
+        nosym = ""
+        for char in word:
+            if char.isalnum():  # keep only letters and numbers
+                nosym += char
+        nosym = nosym.lower()  # convert to lowercase
+
+        if nosym:  
+            if nosym in words:  
+                index = words.index(nosym)
+                count[index] += 1
+            else:
+                words.append(nosym)
+                count.append(1)
+    return words, count
+
+def print_frequencies(words, count):
+    for i in range(len(words)):
+        print(words[i], ":", count[i])
+        
+def main ():
+    sentance = ""
+    count = []
+    words = []
+    while True:
+        sentance = get_sentence(sentance)
+        if is_sentence(sentance):
+            break
+        else:
+            print("Enter a valid sentance")
+    words, count = calculate_frequencies(sentance)
+    print_frequencies(words, count)
+
+
+main()
+
