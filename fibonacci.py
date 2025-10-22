@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-def valid (c):
-    if c < 0:
+def valid(c):
+    if int(c) < 0:         
         return False
-    elif c >= 0:
-        return True
+    elif int(c) >= 0:
+        return True 
     else:
         return False
 
@@ -29,11 +29,12 @@ def printing(list):
 
 def main ():
     while True:
-        choice = int(input("Enter a number\n"))
-        if valid(choice):
-            break
-        else:
-            print("Enter a postive number\n")
+        choice = input("Enter a number: \n")
+        if choice.isdigit():  
+            choice = int(choice)
+            if valid(choice):
+                break
+        print("Enter a positive number\n")
     list = fibonacci(choice)
     printing(list)
     print("\n")
